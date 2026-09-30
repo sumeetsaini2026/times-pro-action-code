@@ -1,0 +1,20 @@
+# Content 
+# copy from everthing from below and add in first-workflow.yml file on Github
+
+# name is an inbuilt identifier to name your workflow
+name: first workflow for action-code repo
+
+# on is an inbuilt identifier. 
+# It will trigger the workflow. workflow_dispatch will trigger workflow manually from Github Action UI
+on: workflow_dispatch
+
+# jobs is an inbuilt identifier. It creates a single job even though you write jobs. you are free to name your first job
+jobs: 
+  job-1: # in job-1, you need to define the environment where different steps (or tasks) will run. This is called a runner. 
+         # https://docs.github.com/en/actions/concepts/runners/about-github-hosted-runners 
+    runs-on: ubuntu-latest
+    steps: # define steps that will run on the runner. 
+      - name: welcome message # give a name to the first step
+        run: echo "welcome to the first ever step, job, workflow written by you!"
+      - name: leave message # name for another step
+        run: echo "my work is done here!"
